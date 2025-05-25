@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>infOpay - Payment App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h2>infOpay - Login 🔒</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username 🧑‍💻</label>
+                    <input type="text" id="username" name="username" placeholder="Enter username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password 🔑</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="forgot-password">
+                <a href="#" onclick="forgotPassword()">Forgot password?</a>
+            </div>
+        </div>
+
+        <!-- Payment form section -->
+        <div class="payment-container">
+            <h2>infOpay - Payment 💸</h2>
+            <form id="payment-form">
+                <div class="input-group">
+                    <label for="payment-method">Payment Method 💳</label>
+                    <select id="payment-method" name="payment-method" onchange="togglePaymentInfo()" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="upi">UPI (Unified Payment Interface)</option>
+                        <option value="netbanking">Net Banking</option>
+                        <option value="wallet">Wallet</option>
+                    </select>
+                </div>
+                <div id="card-info" class="payment-info">
+                    <div class="input-group">
+                        <label for="card-number">Card Number 💳</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="Enter card number">
+                    </div>
+                    <div class="input-group">
+                        <label for="expiry-date">Expiry Date 📅</label>
+                        <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YYYY">
+                    </div>
+                    <div class="input-group">
+                        <label for="cvv">CVV 🔒</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="CVV">
+                    </div>
+                    <div class="input-group">
+                        <label for="name-on-card">Name on Card 📛</label>
+                        <input type="text" id="name-on-card" name="name-on-card" placeholder="Name on card">
+                    </div>
+                </div>
+                <div id="upi-info" class="payment-info">
+                    <div class="input-group">
+                        <label for="upi-id">Your UPI ID 📱</label>
+                        <input type="text" id="upi-id" name="upi-id" placeholder="Enter your UPI ID">
+                    </div>
+                    <div class="input-group">
+                        <label for="otp">OTP 🔐</label>
+                        <input type="text" id="otp" name="otp" placeholder="Enter OTP">
+                    </div>
+                    <div class="input-group">
+                        <label for="receiver-upi-id">Receiver's UPI ID 📲</label>
+                        <input type="text" id="receiver-upi-id" name="receiver-upi-id" placeholder="Enter receiver's UPI ID">
+                    </div>
+                </div>
+                <div id="netbanking-info" class="payment-info">
+                    <div class="input-group">
+                        <label for="bank">Select Bank 🏦</label>
+                        <select id="bank" name="bank">
+                            <option value="">Select Bank</option>
+                            <option value="icici">ICICI Bank</option>
+                            <option value="hdfc">HDFC Bank</option>
+                            <option value="axis">Axis Bank</option>
+                            <option value="sbi">State Bank of India</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="netbanking-username">Username</label>
+                        <input type="text" id="netbanking-username" name="netbanking-username" placeholder="Enter net banking username">
+                    </div>
+                    <div class="input-group">
+                        <label for="netbanking-password">Password</label>
+                        <input type="password" id="netbanking-password" name="netbanking-password" placeholder="Enter net banking password">
+                    </div>
+                </div>
+                <div id="wallet-info" class="payment-info">
+                    <div class="input-group">
+                        <label for="wallet-type">Select Wallet</label>
+                        <select id="wallet-type" name="wallet-type">
+                            <option value="">Select Wallet</option>
+                            <option value="paytm">Paytm</option>
+                            <option value="phonepe">PhonePe</option>
+                            <option value="googlepay">Google Pay</option>
+                            <option value="amazonpay">Amazon Pay</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="wallet-username">Username</label>
+                        <input type="text" id="wallet-username" name="wallet-username" placeholder="Enter wallet username">
+                    </div>
+                    <div class="input-group">
+                        <label for="wallet-password">Password</label>
+                        <input type="password" id="wallet-password" name="wallet-password" placeholder="Enter wallet password">
+                    </div>
+                </div>
+                <button type="submit">Make Payment 💲</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
